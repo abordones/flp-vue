@@ -1,15 +1,18 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
+  <img alt="Vue logo" src="https://cdn.discordapp.com/attachments/768126732955549757/996963521294250015/unknown.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <ComponenteUno></ComponenteUno>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import ComponenteUno from './components/ComponenteUno.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    ComponenteUno
   }
 }
 </script>
