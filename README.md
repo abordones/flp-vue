@@ -1,9 +1,10 @@
-# flp-vue
+# VUE Forum Web Page
 
 ## Project setup
-```
-npm install
-```
+
+### Installing
+
+Node Js: from [Node.js](https://nodejs.org/en/) download the 
 
 ### Compiles and hot-reloads for development
 ```
