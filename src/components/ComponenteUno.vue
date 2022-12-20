@@ -1,3 +1,17 @@
+<script>
+export default {
+    name: 'ComponenteUno',
+
+    data() {
+        return {
+            sub: 'soy un subtitulo sis',
+            sub2:'aloo'
+        }
+    }
+}
+</script>
+
+
 <template>
     <div id="componente-uno">
     <hr/>        
@@ -7,16 +21,3 @@
     <hr/> 
     </div>
 </template>
-
-<script>
-export default {
-    name: 'ComponenteUno',
-    data() {
-        return {
-            sub: 'soy un subtitulo sis',
-            sub2:'aloo'
-        }
-    }
-}
-
-</script>
