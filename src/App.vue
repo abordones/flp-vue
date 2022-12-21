@@ -5,7 +5,9 @@
     
     <router-link to="/crear">Crear</router-link>
     <router-link to="/editar">Editar</router-link>
-    <router-link to="/listar">Listar</router-link>
+    <router-link to="/listar">Listar</router-link> |
+
+    <router-link to="/dinamico">Prueba</router-link>
 
   </nav>
   <router-view/>
