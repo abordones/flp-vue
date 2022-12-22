@@ -9,21 +9,25 @@ const object = ["quien","shota","sos"];
 //para poner indice i
 
 const act = true;
+//const acti = true;
 
 const fruits = [{
     name: "apple",
-    price: "1 $",
+    price: "1",
     desc: "an apple",
+    stock: "12",
     },
     {
     name: "orange",
-    price: "2 $",
+    price: "2",
     desc: "an orange",
+    stock: "36"
     },
     {
     name: "banana",
-    price: "1.5 $",
+    price: "3",
     desc: "a banana",
+    stock: "24",
     },  
 ];
 
@@ -34,6 +38,8 @@ const fruits = [{
 </script>
 
 <template>
+
+
     <h1>alo {{ name.toUpperCase() }}</h1>
     <h2 :style="stylecolor">{{arraycolor}}</h2>
     <h2 :style="`color: ${arraycolor[2]}`">soy chico :'v</h2>
@@ -55,6 +61,16 @@ const fruits = [{
                 {{ fruta.name }} | {{ fruta.price }} | {{ fruta.desc }}
         </li>
     </ul>
+
+    <ul>
+        <template v-for="item in fruits" :key="item.name">
+            <li v-if="item.stock > 20">
+                {{ item.name }} | {{ item.price }}
+            </li>
+        </template>
+    </ul>
+
+
 
     <h1 v-show="act">aparesco </h1>
 

@@ -4,7 +4,8 @@ import HomeView from '../views/HomeView.vue'
 import CrearU from '../components/CrearU.vue'
 import EditarU from '../components/EditarU.vue'
 import ListarU from '../components/ListarU.vue'
-import ComponenteDinamico from '../components/ComponenteDinamico'
+import ComponenteDinamico from '../components/ComponenteDinamico.vue'
+import ComponenteDinamico2 from '../components/ComponenteDinamico2.vue'
 
 const routes = [
   {
@@ -35,6 +36,12 @@ const routes = [
     path: '/dinamico',
     name: 'ComponenteDinamico',
     component: ComponenteDinamico
+  },
+
+  {
+    path: '/dinamico2',
+    name: 'ComponenteDinamico2',
+    component: ComponenteDinamico2
   },
 
   {

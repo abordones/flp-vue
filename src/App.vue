@@ -8,6 +8,8 @@
     <router-link to="/listar">Listar</router-link> |
 
     <router-link to="/dinamico">Prueba</router-link>
+    <router-link to="/dinamico2">Prueba 2</router-link>
+
 
   </nav>
   <router-view/>
@@ -21,6 +23,8 @@
   text-align: center;
   color: #2c3e50;
 }
+
+
 
 nav {
   padding: 30px;
