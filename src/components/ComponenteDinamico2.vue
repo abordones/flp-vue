@@ -1,7 +1,10 @@
 <script setup>
-import {ref} from 'vue'
+import {ref, computed} from 'vue'
+
 
 const name = "Cosas y más cosas"
+
+
 
 //metodo methods
 const handleclick = (message) =>{
@@ -26,6 +29,17 @@ const reset = () => {
     n.value = 0;
 }
 
+const classcounter = computed(() => {
+    if(n.value > 0) {
+        return 'positive'
+    } if(n.value < 0) {
+        return 'negative'
+    } else {
+        return 'zero'
+    }
+
+})
+
 //v-on: y @ son iguales
 //right.prevent no te hace salir esa venta molesta
 
@@ -46,14 +60,14 @@ const reset = () => {
         <button @click="nounter"> -1 </button> |
           
         <button @click="reset"> Reiniciar </button> 
-        <h3 :class="n > 0 ? 'positive' : 'negative' ">{{ n }}</h3>
+        <h3 :class="classcounter">{{ n }}</h3>
     </div>
 </template>
 
 <style>
 #voyamorir {
     text-align: right;
-    color: #343c42;
+    color: rgb(58, 64, 73);
 }
 
 .positive {
@@ -62,5 +76,9 @@ const reset = () => {
 
 .negative {
     color: red;
+}
+
+.zero{
+    color: black;
 }
 </style>
