@@ -4,6 +4,11 @@ import HomeView from '../views/HomeView.vue'
 import CrearU from '../components/CrearU.vue'
 import EditarU from '../components/EditarU.vue'
 import ListarU from '../components/ListarU.vue'
+import BorrarU from '../components/BorrarU.vue'
+
+import ListarP from '../components/ListarP.vue'
+
+
 import ComponenteDinamico from '../components/ComponenteDinamico.vue'
 import ComponenteDinamico2 from '../components/ComponenteDinamico2.vue'
 
@@ -30,6 +35,18 @@ const routes = [
     path: '/listar',
     name: 'Listar',
     component: ListarU
+  },
+
+  {
+    path: '/borrar',
+    name: 'Borrar',
+    component: BorrarU
+  },
+  
+  {
+    path: '/publicaciones',
+    name: 'ListarP',
+    component: ListarP
   },
 
   {
