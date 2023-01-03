@@ -25,7 +25,7 @@
                                     <td>  {{ user.email }}</td>
                                     <td>
 
-                    <a name="" class="btn btn-primary" href="a" role="button">Editar</a>
+                    <a name="" class="btn btn-primary" href="a" role="button">Editar</a><span id="u_cuerpo"> | </span>
                     <a name="" class="btn btn-primary" href="a" role="button">Borrar</a>
                                     
                                     </td>
@@ -38,6 +38,14 @@
                 </div>
             </div>
 
+            <div>-----</div>
+            
+            <div class="btn-group" role="group" aria-label="">
+                <router-link :to="{name:'Crear'}" class="btn btn-success">
+                    <FONT SIZE=5><b>Agregar</b></FONT>
+                </router-link>
+            </div>
+
             <div>
                 -----
             </div>
@@ -48,7 +56,7 @@
 
             <div id="u_cuerpo">
                 <FONT SIZE=5>
-                <b>Aqui puedes ver los Usuarios registrado</b>
+                Aqui puedes ver los Usuarios registrados
                 </font>
             </div>
 

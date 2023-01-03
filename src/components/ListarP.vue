@@ -5,18 +5,20 @@
         <div class="container">
             <div class="card">
                 <div class="card-header">
-                    Publicaciones 
+                    Todos los Posts
                 </div>
                 <div class="card-body">
                     
                     <table class="table">
                         <thread>
-                            <tr>
+                            <tbody>
                                 <th>ID</th>
-                                <th>nombre</th>
-                                <td>Correo</td>
+                                <th>Creado por</th>
+                                <td>Hilo</td>
                                 <th>Acciones</th>
-                            </tr>
+                                <td>Correo</td>
+
+                            </tbody>
                         </thread>
                         <tbody>
 

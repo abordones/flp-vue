@@ -30,7 +30,7 @@
                     <div class="form-group">
                         <label for="">RUT:</label>
                         <input type="number" 
-                            min="100000000" max="99999999" required class="form-control" name="rut" id="rut" v-model="usuario.rut" aria-describedby="helpId" placeholder="RUT">
+                            min="10000000" max="100000000" required class="form-control" name="rut" id="rut" v-model="usuario.rut" aria-describedby="helpId" placeholder="RUT">
                         <small id="helpId" class="form-text text-muted">Escribe tu RUT (sin puntos ni guión)</small>                                         
                     </div>
 
