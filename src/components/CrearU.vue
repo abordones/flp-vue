@@ -30,7 +30,7 @@
                     <div class="form-group">
                         <label for="">RUT:</label>
                         <input type="number" 
-                            min="10000000" max="100000000" required class="form-control" name="rut" id="rut" v-model="usuario.rut" aria-describedby="helpId" placeholder="RUT">
+                            min="100000000" max="1000000000" required class="form-control" name="rut" id="rut" v-model="usuario.rut" aria-describedby="helpId" placeholder="RUT">
                         <small id="helpId" class="form-text text-muted">Escribe tu RUT (sin puntos ni guión)</small>                                         
                     </div>
 
@@ -70,14 +70,11 @@ export default{
             .then(respuesta=>respuesta.json())
             .then((datosRespuestas=>{
                 console.log(datosRespuestas);
-                window.location.href='listar'
+                window.location.href='usuarios'
 
             }))
-
         }
-
     }
-    
 }
 </script>
 

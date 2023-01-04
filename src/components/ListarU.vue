@@ -25,8 +25,12 @@
                                     <td>  {{ user.email }}</td>
                                     <td>
 
-                    <a name="" class="btn btn-primary" href="a" role="button">Editar</a><span id="u_cuerpo"> | </span>
-                    <a name="" class="btn btn-primary" href="a" role="button">Borrar</a>
+                                    <div class="btn-gruop" role="group" aria-label="">
+                                        <router-link :to="{name: 'Editar', params:{id:user.id}}" class="btn btn-success">Editar</router-link><span style="color:white"> | </span>
+                                    
+                                        <button type="button" v-on:click="borrarUsuario(user.id)" class="btn btn-outline-danger">Borrar</button>
+
+                                    </div>
                                     
                                     </td>
                                 </tr>
@@ -79,7 +83,7 @@ export default{
     },
     methods: {
         consultarUsuarios() {
-            fetch("http://localhost/vuedata/selecttodo.php")
+            fetch("http://localhost/vuedata/connection.php")
                 .then((respuesta) => respuesta.json())
                 .then((datosRespuesta) => {
                 console.log(datosRespuesta);
@@ -90,6 +94,19 @@ export default{
             })
         .catch(console.log);
         },
+
+        borrarUsuario(id){
+            fetch('http://localhost/vuedata/connection.php?borrar_u='+id)
+            .then((respuesta) => respuesta.json())
+            .then((datosRespuesta) => {
+                console.log(datosRespuesta)
+                window.location.href="/usuarios"
+            
+            }).catch(console.log);
+            
+
+            console.log(id)
+        }
     }
 }
 </script>

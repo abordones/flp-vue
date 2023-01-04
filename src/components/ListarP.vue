@@ -10,21 +10,20 @@
                 <div class="card-body">
                     
                     <table class="table">
-                        <thread>
-                            <tbody>
-                                <th>ID</th>
-                                <th>Creado por</th>
-                                <td>Hilo</td>
-                                <th>Acciones</th>
-                                <td>Correo</td>
-
-                            </tbody>
-                        </thread>
                         <tbody>
-
+                            <tr>
+                                <th>ID</th>
+                                <th>Título</th>
+                                <th>Post</th>
+                                <th>Fecha de publicación</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </tbody>
+                        <tbody>
                             <tr v-for="publicacion in posts" v-bind:key="publicacion.id_p">
                                 <td> {{ publicacion.id_p }} </td>
-                                <td> {{ publicacion.post }} </td>
+                                <th> {{ publicacion.p_name }} </th>
+                                <td align="left"> {{ publicacion.post }} </td>
                                 <td>  {{ publicacion.date_p }}</td>
                                 <td>
 
@@ -34,6 +33,8 @@
                                 </td>
                             </tr>
                         </tbody>
+
+
                     </table>
                 </div>
 
@@ -41,12 +42,6 @@
 
         </div>
         
-        <div v-for="publicacion in posts" v-bind:key="publicacion.id">
-            <div> {{ publicacion.id }} </div>
-            <div> {{ publicacion.post }}</div>
-            <div> {{ publicacion.active }}</div>
-
-         </div>
         ----
     
     
@@ -67,7 +62,7 @@ export default{
     },
     methods: {
         consultarPosts() {
-            fetch("http://localhost/vuedata/crudusereditar.php")
+            fetch("http://localhost/vuedata/selectpost.php")
                 .then((respuesta) => respuesta.json())
                 .then((datosRespuesta) => {
                 console.log(datosRespuesta);

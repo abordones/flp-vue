@@ -3,10 +3,10 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
     
-    <router-link to="/crear">Crear</router-link>
-    <router-link to="/editar">Editar</router-link>
-    <router-link to="/listar">Listar</router-link>
-    <router-link to="/borrar">Borrar</router-link> |
+    <router-link to="/crearusuario">Crear</router-link>
+    <router-link to="/editarusuario">Editar</router-link>
+    <router-link to="/usuarios">Listar</router-link>
+    <router-link to="/borrarusuario">Borrar</router-link> |
 
     <router-link to="/publicaciones">Publicaciones</router-link> |
 

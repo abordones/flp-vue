@@ -6,7 +6,11 @@ import EditarU from '../components/EditarU.vue'
 import ListarU from '../components/ListarU.vue'
 import BorrarU from '../components/BorrarU.vue'
 
+import CrearP from '../components/CrearP.vue'
 import ListarP from '../components/ListarP.vue'
+import BorrarP from '../components/BorrarP.vue'
+import EditarP from '../components/EditarP.vue'
+
 
 
 import ComponenteDinamico from '../components/ComponenteDinamico.vue'
@@ -20,25 +24,25 @@ const routes = [
   },
 
   {
-    path: '/editar',
+    path: '/editarusuario/:id',
     name: 'Editar',
     component: EditarU
   },
 
   {
-    path: '/crear',
+    path: '/crearusuario',
     name: 'Crear',
     component: CrearU
   },
 
   {
-    path: '/listar',
+    path: '/usuarios',
     name: 'Listar',
     component: ListarU
   },
 
   {
-    path: '/borrar',
+    path: '/borrarusuario',
     name: 'Borrar',
     component: BorrarU
   },
@@ -47,6 +51,24 @@ const routes = [
     path: '/publicaciones',
     name: 'ListarP',
     component: ListarP
+  },
+
+  {
+    path: '/crearpost',
+    name: 'CrearP',
+    component: CrearP
+  },
+
+  {
+    path: '/editapost',
+    name: 'EditarP',
+    component: EditarP
+  },
+
+  {
+    path: '/borrarpost',
+    name: 'BorrarP',
+    component: BorrarP
   },
 
   {
