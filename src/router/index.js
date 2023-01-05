@@ -60,7 +60,7 @@ const routes = [
   },
 
   {
-    path: '/editapost',
+    path: '/editapos/:id',
     name: 'EditarP',
     component: EditarP
   },

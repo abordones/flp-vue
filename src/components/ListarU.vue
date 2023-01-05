@@ -83,7 +83,7 @@ export default{
     },
     methods: {
         consultarUsuarios() {
-            fetch("http://localhost/vuedata/connection.php")
+            fetch("http://localhost/vuedata/connection.php?mostrar_u=1")
                 .then((respuesta) => respuesta.json())
                 .then((datosRespuesta) => {
                 console.log(datosRespuesta);
