@@ -6,7 +6,7 @@ import EditarU from '../components/EditarU.vue'
 import ListarU from '../components/ListarU.vue'
 import BorrarU from '../components/BorrarU.vue'
 
-import CrearP from '../components/CrearP.vue'
+import PostC from '../components/PostC.vue'
 import ListarP from '../components/ListarP.vue'
 import BorrarP from '../components/BorrarP.vue'
 import EditarP from '../components/EditarP.vue'
@@ -55,8 +55,8 @@ const routes = [
 
   {
     path: '/crearpost',
-    name: 'CrearP',
-    component: CrearP
+    name: 'PostC',
+    component: PostC
   },
 
   {

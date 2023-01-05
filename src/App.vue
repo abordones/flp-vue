@@ -1,12 +1,7 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-    
-    <router-link to="/crearusuario">Crear</router-link>
-    <router-link to="/editarusuario">Editar</router-link>
-    <router-link to="/usuarios">Listar</router-link>
-    <router-link to="/borrarusuario">Borrar</router-link> |
+  <nav> | 
+  
+    <router-link to="/usuarios">Usuarios</router-link> | 
 
     <router-link to="/publicaciones">Publicaciones</router-link> |
 
