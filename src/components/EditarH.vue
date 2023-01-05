@@ -6,17 +6,17 @@
 
                 <div class="card">
                     <div class="card-header">
-                     Actualizar Post
+                     Renombrar Hilo
                     </div>
                     <div class="card-body"> 
 
-                        <form v-on:submit.prevent="actualizarPost">
+                        <form v-on:submit.prevent="renombrarHilo">
                     
                             <div class="form-group">
                                 <label for="nombre">Título:</label>
                                 <input type="text"
-                                    class="form-control" required name="titulo" v-model="publicacion.title" id="titulo" aria-describedby="helpId" placeholder="Título">
-                                <small id="helpId" class="form-text text-muted">Escribe el titulo de la Publicación</small>                 
+                                    class="form-control" required name="titulo" v-model="hilo.name_t" id="titulo" aria-describedby="helpId" placeholder="Título">
+                                <small id="helpId" class="form-text text-muted">Escribe el titulo del Hilo</small>                 
                             </div>
                             <div id="p_cuerpo">
                                 .
@@ -24,17 +24,10 @@
                             <div id="p_cuerpo">
                                 .
                             </div>
-                            <div class="form-group">
-                                <label for="">Publicación:</label>
-                                <input type="text" 
-                                    class="form-control" required name="publicacion" id="publicacion" v-model="publicacion.post" aria-describedby="helpId" placeholder="Hola a todos... ">
-                                <small id="helpId" class="form-text text-muted">Escribe el texto aquí</small>                                         
-                            </div>
-
                             <div class="btn-group" role="group" aria-label="">
-                                <button type="submit" class="btn btn-success">Modificar</button>
+                                <button type="submit" class="btn btn-success">Cambiar</button>
                                 <span style="color: white">||</span>
-                                <router-link :to="{name:'ListarP'}" class="btn btn-warning">Cancelar</router-link>
+                                <router-link :to="{name:'ListarH'}" class="btn btn-warning">Cancelar</router-link>
                             </div>
                         </form>
                 
@@ -52,7 +45,7 @@
 export default{
     data(){
         return{
-            publicacion:{}
+            hilo:{}
         }
     },
     created:function(){
@@ -62,29 +55,28 @@ export default{
         obtenerID(){
 
             console.log(this.$route.params.id);
-            fetch("http://localhost/vuedata/connection.php?consultar_p="+this.$route.params.id)
+            fetch("http://localhost/vuedata/connection.php?consultar_t="+this.$route.params.id)
             .then((respuesta) => respuesta.json())
             .then((datosRespuesta) => {
                  console.log(datosRespuesta);
-                 this.publicacion=datosRespuesta[0];
+                 this.hilo=datosRespuesta[0];
 
 
             })
         .catch(console.log);
         
-        }, actualizarPost(){
-            console.log(this.publicacion);
-                var datosEnviar={id_p:this.$route.params.id, title:this.publicacion.title, post:this.publicacion.post}
+        }, renombrarHilo(){
+            console.log(this.hilo);
+                var datosEnviar={id_t:this.$route.params.id, name_t:this.hilo.name_t}
 
-            fetch('http://localhost/vuedata/connection.php?update_p='+this.$route.params.id,{
+            fetch('http://localhost/vuedata/connection.php?update_t='+this.$route.params.id,{
                 method:"POST",
                 body:JSON.stringify(datosEnviar)
             })
             .then(respuesta=>respuesta.json())
             .then((datosRespuestas=>{
                 console.log(datosRespuestas);
-                window.location.href='../publicaciones'
-
+                window.location.href='../hilos'
 
             }))
         }

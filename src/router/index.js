@@ -4,14 +4,18 @@ import HomeView from '../views/HomeView.vue'
 import CrearU from '../components/CrearU.vue'
 import EditarU from '../components/EditarU.vue'
 import ListarU from '../components/ListarU.vue'
-import BorrarU from '../components/BorrarU.vue'
 
 import PostC from '../components/PostC.vue'
 import ListarP from '../components/ListarP.vue'
-import BorrarP from '../components/BorrarP.vue'
 import EditarP from '../components/EditarP.vue'
 
+import NuevoHilo from '../components/NuevoHilo.vue'
+import ListarH from '../components/ListarH.vue'
+import EditarH from '../components/EditarH.vue'
 
+import ReplyTo from '../components/ReplyTo.vue'
+import ListarR from '../components/ListarR.vue'
+import EditarR from '../components/EditarR.vue'
 
 import ComponenteDinamico from '../components/ComponenteDinamico.vue'
 import ComponenteDinamico2 from '../components/ComponenteDinamico2.vue'
@@ -28,29 +32,29 @@ const routes = [
     name: 'Editar',
     component: EditarU
   },
+  
+  {
+    path: '/editapos/:id',
+    name: 'EditarP',
+    component: EditarP
+  },
+
+  {
+    path: '/editath/:id',
+    name: 'EditarH',
+    component: EditarH
+  },
+
+  {
+  path: '/editare/:id',
+  name: 'EditarR',
+  component: EditarR
+  },
 
   {
     path: '/crearusuario',
     name: 'Crear',
     component: CrearU
-  },
-
-  {
-    path: '/usuarios',
-    name: 'Listar',
-    component: ListarU
-  },
-
-  {
-    path: '/borrarusuario',
-    name: 'Borrar',
-    component: BorrarU
-  },
-  
-  {
-    path: '/publicaciones',
-    name: 'ListarP',
-    component: ListarP
   },
 
   {
@@ -60,15 +64,39 @@ const routes = [
   },
 
   {
-    path: '/editapos/:id',
-    name: 'EditarP',
-    component: EditarP
+    path: '/crearhilo',
+    name: 'NuevoHilo',
+    component: NuevoHilo
   },
 
   {
-    path: '/borrarpost',
-    name: 'BorrarP',
-    component: BorrarP
+    path: '/responder',
+    name: 'ReplyTo',
+    component: ReplyTo
+  },
+
+  {
+    path: '/usuarios',
+    name: 'Listar',
+    component: ListarU
+  },
+  
+  {
+    path: '/publicaciones',
+    name: 'ListarP',
+    component: ListarP
+  },
+
+  {
+    path: '/hilos',
+    name: 'ListarH',
+    component: ListarH
+  },
+
+  {
+    path: '/respuestas',
+    name: 'ListaR',
+    component: ListarR
   },
 
   {

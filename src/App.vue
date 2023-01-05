@@ -5,6 +5,10 @@
 
     <router-link to="/publicaciones">Publicaciones</router-link> |
 
+    <router-link to="/hilos">Hilos</router-link> |
+
+    <router-link to="/respuestas">Respuestas</router-link> |
+
     <router-link to="/dinamico">Prueba</router-link>
     <router-link to="/dinamico2">Prueba 2</router-link>
 
