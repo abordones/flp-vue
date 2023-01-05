@@ -22,15 +22,15 @@
                         <tbody>
                             <tr v-for="publicacion in posts" v-bind:key="publicacion.id_p">
                                 <td> {{ publicacion.id_p }} </td>
-                                <th> {{ publicacion.p_name }} </th>
+                                <th> {{ publicacion.title }} </th>
                                 <td align="left"> {{ publicacion.post }} </td>
                                 <td>  {{ publicacion.date_p }}</td>
-                                <td>
+                                <div class="btn-gruop" role="group" aria-label="">
+                                        <router-link :to="{name: 'EditarP', params:{id_p:publicacion.id_p}}" class="btn btn-success">Editar</router-link><span style="color:white"> | </span>
+                                    
+                                        <button type="button" v-on:click="borrarPost(publicacion.id_p)" class="btn btn-outline-danger">Borrar</button>
 
-                <a name="" class="btn btn-primary" href="a" role="button">Editar</a>
-                <a name="" class="btn btn-primary" href="a" role="button">Borrar</a>
-                                
-                                </td>
+                                    </div>
                             </tr>
                         </tbody>
 
@@ -73,6 +73,16 @@ export default{
             })
         .catch(console.log);
         },
+        borrarPost(id_p){
+            fetch('http://localhost/vuedata/connection.php?borrar_p='+id_p)
+            .then((respuesta) => respuesta.json())
+            .then((datosRespuesta) => {
+                console.log(datosRespuesta)
+                window.location.href="/publicaciones"
+            }).catch(console.log);
+            
+            console.log(id_p)
+        }
     }
 }
 </script>
