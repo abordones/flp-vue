@@ -15,7 +15,7 @@
                             <div class="form-group">
                                 <label for="nombre">Respuesta:</label>
                                 <input type="text"
-                                    class="form-control" required name="titulo" v-model="contesta.response" id="titulo" aria-describedby="helpId" placeholder="Título">
+                                    class="form-control" required name="titulo" v-model="contesta.RESPONSE" id="titulo" aria-describedby="helpId" placeholder="Título">
                                 <small id="helpId" class="form-text text-muted">Escribe tu comentario</small>                 
                             </div>
                             <div id="p_cuerpo">
@@ -68,7 +68,7 @@ export default{
         
         }, actualizarResp(){
             console.log(this.contesta);
-                var datosEnviar={id_r:this.$route.params.id, response:this.contesta.response}
+                var datosEnviar={id_r:this.$route.params.id, response:this.contesta.RESPONSE}
 
             fetch('http://localhost/vuedata/connection.php?update_r='+this.$route.params.id,{
                 method:"POST",

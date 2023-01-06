@@ -7,14 +7,12 @@
 
     <router-link to="/hilos">Hilos</router-link> |
 
-    <router-link to="/respuestas">Respuestas</router-link> |
-
-    <router-link to="/dinamico">Prueba</router-link>
-    <router-link to="/dinamico2">Prueba 2</router-link>
-
+    <router-link to="/respuestas">Respuestas</router-link> 
 
   </nav>
   <router-view/>
+
+  
 </template>
 
 <style>
@@ -37,7 +35,7 @@ nav {
 
 nav a {
   font-weight: bold;
-  color: #dbdbdb;
+  color: #ffffff;
 
 }
 
@@ -45,4 +43,5 @@ nav a.router-link-exact-active {
   color: #42b983;
 
 }
+
 </style>

@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <div class="container">
+        <div class="container" id="contenedor">
             <div class="card">
                 <div class="card-header">
                     Todos los Posts
@@ -106,3 +106,15 @@ export default{
     }
 }
 </script>
+
+<style>
+
+#u_cuerpo {
+    color:whitesmoke;
+}
+
+#linea{
+    background-color: #000000;
+}
+
+</style>

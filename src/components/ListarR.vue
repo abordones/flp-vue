@@ -18,16 +18,16 @@
                                 </tr>
                             </tbody>
                             <tbody>
-                                <tr v-for="reply in replies" v-bind:key="reply.id_r">
-                                    <td> {{ reply.id_r }} </td>
-                                    <td> {{ reply.response }} </td>
-                                    <td> {{ reply.date_r }} </td>
+                                <tr v-for="reply in REPLIES" v-bind:key="reply.ID_R">
+                                    <td> {{ reply.ID_R }} </td>
+                                    <td> {{ reply.RESPONSE }} </td>
+                                    <td> {{ reply.DATE_R }} </td>
                                     <td>
 
                                     <div class="btn-gruop" role="group" aria-label="">
-                                        <router-link :to="{name: 'EditarR', params:{id:reply.id_r}}" class="btn btn-success">Editar</router-link><span style="color:white"> | </span>
+                                        <router-link :to="{name: 'EditarR', params:{id:reply.ID_R}}" class="btn btn-success">Editar</router-link><span style="color:white"> | </span>
                                     
-                                        <button type="button" v-on:click="borrarRespuesta(reply.id_r)" class="btn btn-outline-danger">Borrar</button>
+                                        <button type="button" v-on:click="borrarRespuesta(reply.ID_R)" class="btn btn-outline-danger">Borrar</button>
 
                                     </div>
                                     
@@ -73,7 +73,7 @@ export default{
 
     data() {
         return{
-            replies:[]
+            REPLIES:[]
         }
     },
 
@@ -86,16 +86,16 @@ export default{
                 .then((respuesta) => respuesta.json())
                 .then((datosRespuesta) => {
                 console.log(datosRespuesta);
-                this.replies = [];
+                this.REPLIES = [];
                 if (typeof datosRespuesta[0].success === "undefined") {
-                    this.replies = datosRespuesta;
+                    this.REPLIES = datosRespuesta;
                 }
             })
         .catch(console.log);
         },
 
-        borrarRespuesta(id_r){
-            fetch('http://localhost/vuedata/connection.php?borrar_r='+id_r)
+        borrarRespuesta(ID_R){
+            fetch('http://localhost/vuedata/connection.php?borrar_r='+ID_R)
             .then((respuesta) => respuesta.json())
             .then((datosRespuesta) => {
                 console.log(datosRespuesta)
@@ -104,7 +104,7 @@ export default{
             }).catch(console.log);
             
 
-            console.log(id_r)
+            console.log(ID_R)
         }
     }
 }

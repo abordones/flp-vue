@@ -17,6 +17,8 @@ import ReplyTo from '../components/ReplyTo.vue'
 import ListarR from '../components/ListarR.vue'
 import EditarR from '../components/EditarR.vue'
 
+import LoginN from '../components/LoginN.vue'
+
 import ComponenteDinamico from '../components/ComponenteDinamico.vue'
 import ComponenteDinamico2 from '../components/ComponenteDinamico2.vue'
 
@@ -97,6 +99,12 @@ const routes = [
     path: '/respuestas',
     name: 'ListarR',
     component: ListarR
+  },
+
+  {
+    path: '/login',
+    name: 'LoginN',
+    component: LoginN
   },
 
   {
