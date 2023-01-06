@@ -1,6 +1,5 @@
 <template>
     <div>
-        El kiwi es gay
 
         <div>
             <div class="container">

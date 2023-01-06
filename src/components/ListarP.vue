@@ -1,6 +1,5 @@
 <template>
     <div>
-        El kiwi es gay
 
         <div class="container">
             <div class="card">
@@ -20,15 +19,15 @@
                             </tr>
                         </tbody>
                         <tbody>
-                            <tr v-for="publicacion in posts" v-bind:key="publicacion.id_p">
-                                <td> {{ publicacion.id_p }} </td>
-                                <th> {{ publicacion.title }} </th>
-                                <td align="left"> {{ publicacion.post }} </td>
+                            <tr v-for="publicacion in POSTS" v-bind:key="publicacion.ID_P">
+                                <td> {{ publicacion.ID_P }} </td>
+                                <th> {{ publicacion.TITLE }} </th>
+                                <td align="left"> {{ publicacion.POST }} </td>
                                 <td>  {{ publicacion.date_p }}</td>
                                 <div class="btn-gruop" role="group" aria-label="">
-                                        <router-link :to="{name: 'EditarP', params:{id:publicacion.id_p}}" class="btn btn-success">Editar</router-link><span style="color:white"> | </span>
+                                        <router-link :to="{name: 'EditarP', params:{id:publicacion.ID_P}}" class="btn btn-success">Editar</router-link><span style="color:white"> | </span>
                                     
-                                        <button type="button" v-on:click="borrarPost(publicacion.id_p)" class="btn btn-outline-danger">Borrar</button>
+                                        <button type="button" v-on:click="borrarPost(publicacion.ID_P)" class="btn btn-outline-danger">Borrar</button>
 
                                     </div>
                             </tr>
@@ -74,7 +73,7 @@ export default{
 
     data() {
         return{
-            posts:[]
+           POSTS:[]
         }
     },
 
@@ -87,22 +86,22 @@ export default{
                 .then((respuesta) => respuesta.json())
                 .then((datosRespuesta) => {
                 console.log(datosRespuesta);
-                this.posts = [];
+                this.POSTS = [];
                 if (typeof datosRespuesta[0].success === "undefined") {
-                    this.posts = datosRespuesta;
+                    this.POSTS = datosRespuesta;
                 }
             })
         .catch(console.log);
         },
-        borrarPost(id_p){
-            fetch('http://localhost/vuedata/connection.php?borrar_p='+id_p)
+        borrarPost(ID_P){
+            fetch('http://localhost/vuedata/connection.php?borrar_p='+ID_P)
             .then((respuesta) => respuesta.json())
             .then((datosRespuesta) => {
                 console.log(datosRespuesta)
                 window.location.href="/publicaciones"
             }).catch(console.log);
             
-            console.log(id_p)
+            console.log(ID_P)
         }
     }
 }

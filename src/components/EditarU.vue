@@ -12,25 +12,25 @@
                     <div class="form-group">
                         <label for="nombre">Nombre:</label>
                         <input type="text"
-                            class="form-control" required name="nombre" v-model="usuario.name" id="nombre" aria-describedby="helpId" placeholder="Nombre">
+                            class="form-control" required name="nombre" v-model="usuario.NAME" id="nombre" aria-describedby="helpId" placeholder="Nombre">
                         <small id="helpId" class="form-text text-muted">Escribe tu nombre de Usuario</small>                 
                     </div>
                     <div class="form-group">
                         <label for="">Correo:</label>
                         <input type="text" 
-                            class="form-control" required name="correo" id="correo" v-model="usuario.email" aria-describedby="helpId" placeholder="Correo">
+                            class="form-control" required name="correo" id="correo" v-model="usuario.EMAIL" aria-describedby="helpId" placeholder="Correo">
                         <small id="helpId" class="form-text text-muted">Escribe tu Correo</small>                                         
                     </div>
                     <div class="form-group">
                         <label for="">Contraseña:</label>
                         <input type="password" 
-                            class="form-control" required name="contraseña" id="contraseña" v-model="usuario.password" aria-describedby="helpId" placeholder="Contraseña">
+                            class="form-control" required name="contraseña" id="contraseña" v-model="usuario.PASSWORD" aria-describedby="helpId" placeholder="Contraseña">
                         <small id="helpId" class="form-text text-muted">Ingresa una contraseña</small>                                         
                     </div>
                     <div class="form-group">
                         <label for="">RUT:</label>
                         <input type="number" 
-                            min="100000000" max="1000000000" required class="form-control" name="rut" id="rut" v-model="usuario.rut" aria-describedby="helpId" placeholder="RUT">
+                            min="100000000" max="1000000000" required class="form-control" name="rut" id="rut" v-model="usuario.RUT" aria-describedby="helpId" placeholder="RUT">
                         <small id="helpId" class="form-text text-muted">Escribe tu RUT (sin puntos ni guión)</small>                                         
                     </div>
 
@@ -75,7 +75,7 @@ export default{
         
         }, actualizarUsuario(){
             console.log(this.usuario);
-            var datosEnviar={id:this.$route.params.id, name:this.usuario.name, email:this.usuario.email, password:this.usuario.password, rut:this.usuario.rut}
+            var datosEnviar={id_u:this.$route.params.id, name:this.usuario.NAME, email:this.usuario.EMAIL, password:this.usuario.PASSWORD, rut:this.usuario.RUT}
 
         fetch('http://localhost/vuedata/connection.php?update_u='+this.$route.params.id,{
             method:"POST",

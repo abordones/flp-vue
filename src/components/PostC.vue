@@ -60,8 +60,8 @@ export default{
     },
     methods:{
         agregarPost(){
-            console.log(this.contesta);
-        var datosEnviar={response:this.publicacion.title}
+            console.log(this.publicacion);
+        var datosEnviar={title:this.publicacion.title, post:this.publicacion.post}
 
         fetch('http://localhost/vuedata/connection.php?insertar_p=1',{
             method:"POST",

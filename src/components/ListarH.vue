@@ -1,6 +1,5 @@
 <template>
     <div>
-        El kiwi es gay
 
         <div class="container">
             <div class="card">
@@ -13,22 +12,20 @@
                         <tbody>
                             <tr>
                                 <th>ID</th>
-                                <th>Autor</th>
                                 <th>Título</th>
                                 <th>Fecha de publicación</th>
                                 <th>Acciones</th>
                             </tr>
                         </tbody>
                         <tbody>
-                            <tr v-for="hilo in threads" v-bind:key="hilo.id_t">
-                                <td> {{ hilo.id_t }} </td>
-                                <th> {{ hilo.id_u }} </th>
-                                <th> {{ hilo.name_t }} </th>
-                                <td>  {{ hilo.date_t }}</td>
+                            <tr v-for="hilo in THREADS" v-bind:key="hilo.ID_T">
+                                <td> {{ hilo.ID_T }} </td>
+                                <th> {{ hilo.NAME_T }} </th>
+                                <td>  {{ hilo.DATE_T }}</td>
                                 <div class="btn-gruop" role="group" aria-label="">
-                                        <router-link :to="{name: 'EditarH', params:{id:hilo.id_t}}" class="btn btn-success">Editar</router-link><span style="color:white"> | </span>
+                                        <router-link :to="{name: 'EditarH', params:{id:hilo.ID_T}}" class="btn btn-success">Editar</router-link><span style="color:white"> | </span>
                                     
-                                        <button type="button" v-on:click="borrarHilo(hilo.id_t)" class="btn btn-outline-danger">Borrar</button>
+                                        <button type="button" v-on:click="borrarHilo(hilo.ID_T)" class="btn btn-outline-danger">Borrar</button>
 
                                     </div>
                             </tr>
@@ -74,7 +71,7 @@ export default{
 
     data() {
         return{
-            threads:[]
+            THREADS:[]
         }
     },
 
@@ -87,23 +84,31 @@ export default{
                 .then((respuesta) => respuesta.json())
                 .then((datosRespuesta) => {
                 console.log(datosRespuesta);
-                this.threads = [];
+                this.THREADS = [];
                 if (typeof datosRespuesta[0].success === "undefined") {
-                    this.threads = datosRespuesta;
+                    this.THREADS = datosRespuesta;
                 }
             })
         .catch(console.log);
         },
-        borrarHilo(id_t){
-            fetch('http://localhost/vuedata/connection.php?borrar_t='+id_t)
+        borrarHilo(ID_T){
+            fetch('http://localhost/vuedata/connection.php?borrar_t='+ID_T)
             .then((respuesta) => respuesta.json())
             .then((datosRespuesta) => {
                 console.log(datosRespuesta)
                 window.location.href="/hilos"
             }).catch(console.log);
             
-            console.log(id_t)
+            console.log(ID_T)
         }
     }
 }
 </script>
+
+<style>
+
+body {
+  background: url(https://cdn.discordapp.com/attachments/324358291561906186/1060850394709897226/bginformatico.jpg) no-repeat;
+  
+}
+</style>

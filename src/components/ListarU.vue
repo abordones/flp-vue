@@ -1,6 +1,5 @@
 <template>
     <div>
-        El kiwi es gay
 
         <div>
             <div class="container">
@@ -13,22 +12,22 @@
                             <tbody>
                                 <tr>
                                     <th>ID</th>
-                                    <th>nombre</th>
+                                    <th>Nombre</th>
                                     <th>Correo</th>
                                     <th>Acciones</th>
                                 </tr>
                             </tbody>
                             <tbody>
-                                <tr v-for="user in users" v-bind:key="user.id">
-                                    <td> {{ user.id }} </td>
-                                    <td> {{ user.name }} </td>
-                                    <td>  {{ user.email }}</td>
+                                <tr v-for="user in USERS" v-bind:key="user.ID_U">
+                                    <td> {{ user.ID_U }} </td>
+                                    <td> {{ user.NAME }} </td>
+                                    <td>  {{ user.EMAIL }}</td>
                                     <td>
 
                                     <div class="btn-gruop" role="group" aria-label="">
-                                        <router-link :to="{name: 'Editar', params:{id:user.id}}" class="btn btn-success">Editar</router-link><span style="color:white"> | </span>
+                                        <router-link :to="{name: 'Editar', params:{id:user.ID_U}}" class="btn btn-success">Editar</router-link><span style="color:white"> | </span>
                                     
-                                        <button type="button" v-on:click="borrarUsuario(user.id)" class="btn btn-outline-danger">Borrar</button>
+                                        <button type="button" v-on:click="borrarUsuario(user.ID_U)" class="btn btn-outline-danger">Borrar</button>
 
                                     </div>
                                     
@@ -74,7 +73,7 @@ export default{
 
     data() {
         return{
-            users:[]
+            USERS:[]
         }
     },
 
@@ -87,16 +86,16 @@ export default{
                 .then((respuesta) => respuesta.json())
                 .then((datosRespuesta) => {
                 console.log(datosRespuesta);
-                this.users = [];
+                this.USERS = [];
                 if (typeof datosRespuesta[0].success === "undefined") {
-                    this.users = datosRespuesta;
+                    this.USERS = datosRespuesta;
                 }
             })
         .catch(console.log);
         },
 
-        borrarUsuario(id){
-            fetch('http://localhost/vuedata/connection.php?borrar_u='+id)
+        borrarUsuario(ID_U){
+            fetch('http://localhost/vuedata/connection.php?borrar_u='+ID_U)
             .then((respuesta) => respuesta.json())
             .then((datosRespuesta) => {
                 console.log(datosRespuesta)
@@ -105,7 +104,7 @@ export default{
             }).catch(console.log);
             
 
-            console.log(id)
+            console.log(ID_U)
         }
     }
 }

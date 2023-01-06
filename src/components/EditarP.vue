@@ -15,7 +15,7 @@
                             <div class="form-group">
                                 <label for="nombre">Título:</label>
                                 <input type="text"
-                                    class="form-control" required name="titulo" v-model="publicacion.title" id="titulo" aria-describedby="helpId" placeholder="Título">
+                                    class="form-control" required name="titulo" v-model="publicacion.TITLE" id="titulo" aria-describedby="helpId" placeholder="Título">
                                 <small id="helpId" class="form-text text-muted">Escribe el titulo de la Publicación</small>                 
                             </div>
                             <div id="p_cuerpo">
@@ -27,7 +27,7 @@
                             <div class="form-group">
                                 <label for="">Publicación:</label>
                                 <input type="text" 
-                                    class="form-control" required name="publicacion" id="publicacion" v-model="publicacion.post" aria-describedby="helpId" placeholder="Hola a todos... ">
+                                    class="form-control" required name="publicacion" id="publicacion" v-model="publicacion.POST" aria-describedby="helpId" placeholder="Hola a todos... ">
                                 <small id="helpId" class="form-text text-muted">Escribe el texto aquí</small>                                         
                             </div>
 
@@ -74,7 +74,7 @@ export default{
         
         }, actualizarPost(){
             console.log(this.publicacion);
-                var datosEnviar={id_p:this.$route.params.id, title:this.publicacion.title, post:this.publicacion.post}
+                var datosEnviar={id_p:this.$route.params.id, post:this.publicacion.POST, title:this.publicacion.TITLE}
 
             fetch('http://localhost/vuedata/connection.php?update_p='+this.$route.params.id,{
                 method:"POST",

@@ -15,7 +15,7 @@
                             <div class="form-group">
                                 <label for="nombre">Título:</label>
                                 <input type="text"
-                                    class="form-control" required name="titulo" v-model="hilo.name_t" id="titulo" aria-describedby="helpId" placeholder="Título">
+                                    class="form-control" required name="titulo" v-model="hilo.NAME_T" id="titulo" aria-describedby="helpId" placeholder="Título">
                                 <small id="helpId" class="form-text text-muted">Escribe el titulo del Hilo</small>                 
                             </div>
                             
@@ -68,7 +68,7 @@ export default{
         
         }, renombrarHilo(){
             console.log(this.hilo);
-                var datosEnviar={id_t:this.$route.params.id, name_t:this.hilo.name_t}
+                var datosEnviar={id_t:this.$route.params.id, name_t:this.hilo.NAME_T}
 
             fetch('http://localhost/vuedata/connection.php?update_t='+this.$route.params.id,{
                 method:"POST",

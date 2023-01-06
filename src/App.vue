@@ -22,7 +22,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background-color: #182a3f;
+  background: url(./assets/fondo-tecnologico.jpg) no-repeat;;
+  backdrop-filter: blur(50px);
+  background-size: cover ;
+  min-height: 100vh;
+  padding-bottom: 3em;
   min-height: 100vh;
 }
 
