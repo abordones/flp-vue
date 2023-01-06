@@ -56,7 +56,7 @@ export default{
         obtenerID(){
 
             console.log(this.$route.params.id);
-            fetch("http://localhost/vuedata/connection.php?consultar_t="+this.$route.params.id)
+            fetch("http://localhost/vuedata/connection.php?consultar_r="+this.$route.params.id)
             .then((respuesta) => respuesta.json())
             .then((datosRespuesta) => {
                  console.log(datosRespuesta);
@@ -66,8 +66,8 @@ export default{
             })
         .catch(console.log);
         
-        }, actualizarPost(){
-            console.log(this.publicacion);
+        }, actualizarResp(){
+            console.log(this.contesta);
                 var datosEnviar={id_r:this.$route.params.id, response:this.contesta.response}
 
             fetch('http://localhost/vuedata/connection.php?update_r='+this.$route.params.id,{
@@ -77,7 +77,7 @@ export default{
             .then(respuesta=>respuesta.json())
             .then((datosRespuestas=>{
                 console.log(datosRespuestas);
-                window.location.href='../respuesta'
+                window.location.href='../respuestas'
 
 
             }))

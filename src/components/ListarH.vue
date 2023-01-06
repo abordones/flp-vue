@@ -13,6 +13,7 @@
                         <tbody>
                             <tr>
                                 <th>ID</th>
+                                <th>Autor</th>
                                 <th>Título</th>
                                 <th>Fecha de publicación</th>
                                 <th>Acciones</th>
@@ -21,6 +22,7 @@
                         <tbody>
                             <tr v-for="hilo in threads" v-bind:key="hilo.id_t">
                                 <td> {{ hilo.id_t }} </td>
+                                <th> {{ hilo.id_u }} </th>
                                 <th> {{ hilo.name_t }} </th>
                                 <td>  {{ hilo.date_t }}</td>
                                 <div class="btn-gruop" role="group" aria-label="">

@@ -95,7 +95,7 @@ export default{
         .catch(console.log);
         },
 
-        borrarUsuario(id_r){
+        borrarRespuesta(id_r){
             fetch('http://localhost/vuedata/connection.php?borrar_r='+id_r)
             .then((respuesta) => respuesta.json())
             .then((datosRespuesta) => {

@@ -18,6 +18,7 @@
                                     class="form-control" required name="titulo" v-model="hilo.name_t" id="titulo" aria-describedby="helpId" placeholder="Título">
                                 <small id="helpId" class="form-text text-muted">Escribe el titulo del Hilo</small>                 
                             </div>
+                            
                             <div id="p_cuerpo">
                                 .
                             </div>
@@ -73,10 +74,10 @@ export default{
                 method:"POST",
                 body:JSON.stringify(datosEnviar)
             })
-            .then(respuesta=>respuesta.json())
-            .then((datosRespuestas=>{
-                console.log(datosRespuestas);
-                window.location.href='../hilos'
+                .then(respuesta=>respuesta.json())
+                .then((datosRespuestas=>{
+                    console.log(datosRespuestas);
+                    window.location.href='../hilos'
 
             }))
         }

@@ -95,7 +95,7 @@ const routes = [
 
   {
     path: '/respuestas',
-    name: 'ListaR',
+    name: 'ListarR',
     component: ListarR
   },
 
