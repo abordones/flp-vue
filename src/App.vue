@@ -1,13 +1,13 @@
 <template>
   <nav> | 
   
-    <router-link to="/usuarios">Usuarios</router-link> | 
+    <router-link to="/usuarios">[Usuarios]</router-link> | 
 
-    <router-link to="/publicaciones">Publicaciones</router-link> |
+    <router-link to="/publicaciones">[Publicaciones]</router-link> |
 
-    <router-link to="/hilos">Hilos</router-link> |
+    <router-link to="/hilos">[Hilos]</router-link> |
 
-    <router-link to="/respuestas">Respuestas</router-link> 
+    <router-link to="/respuestas">[Respuestas]</router-link> |
 
   </nav>
   <router-view/>

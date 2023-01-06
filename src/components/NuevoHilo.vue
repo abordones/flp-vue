@@ -26,6 +26,13 @@
                 .
             </div>
 
+            <div class="form-group">
+                <label for="">ID del Autor:</label>
+                <input type="number" 
+                            min="1" max="1000000000" required class="form-control" name="idu" id="idu" v-model="hilo.id_u" aria-describedby="helpId" placeholder="">
+                <small id="helpId" class="form-text text-muted">ID</small>                                         
+            </div>
+
             <div class="btn-group" role="group" aria-label="">
                 <button type="submit" class="btn btn-success">Subir</button>
                 <span style="color: white">||</span>
@@ -57,7 +64,7 @@ export default{
         agregarHilo(){
             console.log(this.hilo);
             
-        var datosEnviar={name_t:this.hilo.name_t}
+        var datosEnviar={name_t:this.hilo.name_t, id_u:this.hilo.id_u}
             console.log(this.hilo);
 
         fetch('http://localhost/vuedata/connection.php?insertar_t=1',{

@@ -14,6 +14,9 @@
                                     <th>ID</th>
                                     <th>Respuesta</th>
                                     <th>Fecha</th>
+                                    <th>Autor</th>
+                                    <th>Respuesta a</th>
+                                    <th>Hilo Asociado</th>
                                     <th>Acciones</th>
                                 </tr>
                             </tbody>
@@ -22,6 +25,9 @@
                                     <td> {{ reply.ID_R }} </td>
                                     <td> {{ reply.RESPONSE }} </td>
                                     <td> {{ reply.DATE_R }} </td>
+                                    <td> {{ reply.ID_U}} </td>
+                                    <td> {{ reply.ID_P }} </td>
+                                    <td> {{ reply.ID_T }} </td>
                                     <td>
 
                                     <div class="btn-gruop" role="group" aria-label="">

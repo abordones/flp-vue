@@ -14,6 +14,7 @@
                                 <th>ID</th>
                                 <th>Título</th>
                                 <th>Fecha de publicación</th>
+                                <th>Autor</th>
                                 <th>Acciones</th>
                             </tr>
                         </tbody>
@@ -22,6 +23,7 @@
                                 <td> {{ hilo.ID_T }} </td>
                                 <th> {{ hilo.NAME_T }} </th>
                                 <td>  {{ hilo.DATE_T }}</td>
+                                <td>  {{ hilo.ID_U }}</td>
                                 <div class="btn-gruop" role="group" aria-label="">
                                         <router-link :to="{name: 'EditarH', params:{id:hilo.ID_T}}" class="btn btn-success">Editar</router-link><span style="color:white"> | </span>
                                     
@@ -80,7 +82,7 @@ export default{
     },
     methods: {
         consultarHilos() {
-            fetch("http://localhost/vuedata/selectthread.php")
+            fetch("http://localhost/vuedata/connection.php?mostrar_t=1")
                 .then((respuesta) => respuesta.json())
                 .then((datosRespuesta) => {
                 console.log(datosRespuesta);

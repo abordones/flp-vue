@@ -15,6 +15,8 @@
                                 <th>Título</th>
                                 <th>Post</th>
                                 <th>Fecha de publicación</th>
+                                <th>Hilo</th>
+                                <th>Autor</th>
                                 <th>Acciones</th>
                             </tr>
                         </tbody>
@@ -23,7 +25,9 @@
                                 <td> {{ publicacion.ID_P }} </td>
                                 <th> {{ publicacion.TITLE }} </th>
                                 <td align="left"> {{ publicacion.POST }} </td>
-                                <td>  {{ publicacion.date_p }}</td>
+                                <td>  {{ publicacion.DATE_P }}</td>
+                                <td>  {{ publicacion.ID_T }}</td>
+                                <td>  {{ publicacion.ID_U }}</td>
                                 <div class="btn-gruop" role="group" aria-label="">
                                         <router-link :to="{name: 'EditarP', params:{id:publicacion.ID_P}}" class="btn btn-success">Editar</router-link><span style="color:white"> | </span>
                                     
@@ -82,7 +86,7 @@ export default{
     },
     methods: {
         consultarPosts() {
-            fetch("http://localhost/vuedata/selectpost.php")
+            fetch("http://localhost/vuedata/connection.php?mostrar_p=1")
                 .then((respuesta) => respuesta.json())
                 .then((datosRespuesta) => {
                 console.log(datosRespuesta);
